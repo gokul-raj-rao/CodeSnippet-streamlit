@@ -1,0 +1,45 @@
+[
+    {
+        "title": "My Database Connection code template",
+        "description": "Create a SQL connection",
+        "language": "Python",
+        "code": "import sqlite3\n\n# Connect to database (or create if it doesn\u2019t exist)\nconn = sqlite3.connect(\"example.db\")\n\n# Create a cursor object\ncursor = conn.cursor()\n\n# Create table\ncursor.execute('''CREATE TABLE IF NOT EXISTS users (\n                    id INTEGER PRIMARY KEY,\n                    name TEXT,\n                    age INTEGER\n                )''')\n\n# Insert a row of data\ncursor.execute(\"INSERT INTO users (name, age) VALUES (?, ?)\", (\"Alice\", 25))\n\n# Commit the changes\nconn.commit()\n\n# Fetch data\ncursor.execute(\"SELECT * FROM users\")\nprint(cursor.fetchall())\n\n# Close the connection\nconn.close()"
+    },
+    {
+        "title": "Divide Possibilities",
+        "description": "Division of numbers",
+        "language": "Python",
+        "code": "n=6\nres=1\nfor i in range(2,int(n**0.5)+1):\n    if n%i==0:\n        res+=i\n        if i!=n//i:\n            res+=n//i\n            print(n//i)\n\nprint(res==n)"
+    },
+    {
+        "title": "User Function Template",
+        "description": "User Function Template",
+        "language": "Python",
+        "code": "class Solution:\n\tdef reverseDigits(self, n):\n\t\treversed_num=0\n\t\twhile n>0:\n\t\t\tdigit=n%10\n\t\t\treversed_num=reversed_num*10+digit\n\t\t\tn//=10\n\t\treturn reversed_num\n"
+    },
+    {
+        "title": "Reverse Exponentiation",
+        "description": "User Function Template",
+        "language": "Python",
+        "code": "class Solution:\n    def reverseexponentiation(self, n):\n        # code here\n        temp_n=n\n        to_power=0\n        while temp_n>0:\n            digits=temp_n%10\n            to_power=to_power*10+digits\n            temp_n//=10\n        result=pow(n,to_power)\n        return result"
+    },
+    {
+        "title": "DSA GCD",
+        "description": "short code",
+        "language": "Python",
+        "code": "# GCD of two number\n\nclass Solution:\n    def gcd(self, a, b):\n        # code here\n        while b!=0:\n            a,b=b,a%b\n        return a\n            "
+    },
+    {
+        "title": "DSA Min Max",
+        "description": "short code",
+        "language": "Python",
+        "code": "\narr=[1,2,3,4,5]\nmin=arr[0]\nmax=arr[0]\nfor x in arr:\n    if x<min:\n        min=x\n    elif x>max:\n        max=x\nprint(min)\nprint(max)"
+    },
+    {
+        "title": "Remove Zeros",
+        "description": "Code short",
+        "language": "Python",
+        "code": "arr=[4, 5, 0, 1, 9, 0, 5, 0]\nfor i in arr:\n    if i==0:\n        arr.remove(i)\n        arr.append(0)\nprint(arr)"
+    }
+    
+]
